@@ -1,11 +1,12 @@
 package dw
 
 import (
-	"github.com/Bruinxs/uio/dw/replace"
-	"github.com/Bruinxs/util"
 	"io"
 	"sync"
 	"time"
+
+	"github.com/bruinxs/uio/dw/replace"
+	"github.com/bruinxs/util"
 )
 
 type DateWriter struct {
