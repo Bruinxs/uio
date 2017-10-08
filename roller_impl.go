@@ -20,7 +20,7 @@ type DateFileRoller struct {
 // NewDateFileRoller return a new DateFileRoller
 // format is time format such as 2006-01-02.log
 func NewDateFileRoller(dir, format string) *DateFileRoller {
-	os.MkdirAll(dir, 0666)
+	os.MkdirAll(dir, 0771)
 	return &DateFileRoller{fileDir: dir, fileNameFormat: format}
 }
 
