@@ -28,7 +28,7 @@ func (d *DateFileRoller) newFileName() string {
 }
 
 func (d *DateFileRoller) createFile(fileName string) (*os.File, error) {
-	return os.OpenFile(filepath.Join(d.fileDir, fileName), os.O_WRONLY|os.O_CREATE|os.O_TRUNC|os.O_APPEND, 0666)
+	return os.OpenFile(filepath.Join(d.fileDir, fileName), os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
 }
 
 func (d *DateFileRoller) exist(fileName string) bool {
