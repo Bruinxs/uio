@@ -17,8 +17,11 @@ type DateFileRoller struct {
 }
 
 // NewDateFileRoller return a new DateFileRoller
-// format is time format such as 2006-01-02.log
+// format is time format such as '2006-01-02.log', default value is 'o_2006-01-02.log'
 func NewDateFileRoller(dir, format string) *DateFileRoller {
+	if format == "" {
+		format = "o_2006-01-02.log"
+	}
 	os.MkdirAll(dir, 0771)
 	return &DateFileRoller{fileDir: dir, fileNameFormat: format}
 }
