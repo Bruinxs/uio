@@ -34,14 +34,6 @@ func (d *DateFileRoller) createFile(fileName string) (*os.File, error) {
 	return os.OpenFile(filepath.Join(d.fileDir, fileName), os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0666)
 }
 
-func (d *DateFileRoller) exist(fileName string) bool {
-	_, err := os.Stat(filepath.Join(d.fileDir, fileName))
-	if err == nil {
-		return true
-	}
-	return os.IsExist(err)
-}
-
 // NeedRoll decide when to roll
 func (d *DateFileRoller) NeedRoll() bool {
 	d.nextFileName = d.newFileName()
